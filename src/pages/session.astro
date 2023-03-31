@@ -1,0 +1,29 @@
+---
+import loginSave from "@utils/login";
+import {RequestCookieStore} from "@worker-tools/request-cookie-store";
+if (Astro.request.method === "POST") {
+  const data = Object.fromEntries(new URLSearchParams(await Astro.request.text()));
+  const d = await loginSave(data.email, data.password);
+  const cookieStore = new RequestCookieStore(Astro.request);
+  if (d.success == false) {
+    const response = Astro.redirect("/login");
+    new Headers(cookieStore.headers).forEach((value, key) => {
+      response.headers.append(key, value);
+    });
+    return response;
+  } else {
+    await cookieStore.set({
+      name: "login",
+      value: d?.token ?? "",
+      httpOnly: true,
+    });
+    const response = Astro.redirect("/");
+    new Headers(cookieStore.headers).forEach((value, key) => {
+      response.headers.append(key, value);
+    });
+    return response;
+  }
+} else {
+  return Astro.redirect("/login");
+}
+---

@@ -1,0 +1,14 @@
+---
+import {RequestCookieStore} from "@worker-tools/request-cookie-store";
+if (Astro.request.method === "POST") {
+  const cookieStore = new RequestCookieStore(Astro.request);
+  await cookieStore.delete("login");
+  const response = Astro.redirect("/login");
+  new Headers(cookieStore.headers).forEach((value, key) => {
+    response.headers.append(key, value);
+  });
+  return response;
+} else {
+  return Astro.redirect("/");
+}
+---
