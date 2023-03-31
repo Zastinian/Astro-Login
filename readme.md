@@ -2,7 +2,7 @@
 
 ## Links
 
-> - [Website](https://mresmile.com/) (Discord Bot)
+> - [Website](https://mresmile.com/) (Discord Bot) - Use Astro
 > - [Discord](https://mresmile.com/support) (Discord Support)
 > - [Portfolio](https://zastinian.com/)
 
