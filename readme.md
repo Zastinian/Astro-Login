@@ -8,4 +8,4 @@
 
 ## Contributors
 
-- [@Zastinian](https://github.com/Zastinian) (All)
+- [@Zastinian](https://github.com/Zastinian)
