@@ -10,15 +10,15 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^5.2.0",
-    "@worker-tools/request-cookie-store": "^0.6.0-pre.3",
-    "astro": "^2.6.4",
-    "astro-compressor": "^0.4.0",
-    "express": "^4.18.2",
-    "jsonwebtoken": "^9.0.0"
+    "@astrojs/node": "^8.2.3",
+    "@worker-tools/request-cookie-store": "0.6.0-pre.3",
+    "astro": "^4.4.15",
+    "astro-compressor": "^0.4.1",
+    "express": "^4.18.3",
+    "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "@types/cookie": "^0.5.1",
-    "@types/jsonwebtoken": "^9.0.1"
+    "@types/cookie": "^0.6.0",
+    "@types/jsonwebtoken": "^9.0.6"
   }
 }
