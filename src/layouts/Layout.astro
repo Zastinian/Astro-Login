@@ -1,7 +1,7 @@
 ---
 import hasProfile from "@utils/profile";
 
-const cookie: string = `${Astro.cookies.get("login").value}`;
+const cookie: string = `${Astro.cookies.get("login")?.value}`;
 const d = hasProfile(cookie);
 let login: string = `${d.success}`;
 ---

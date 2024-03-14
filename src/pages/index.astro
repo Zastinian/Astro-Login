@@ -3,7 +3,7 @@ import Layout from "@layouts/Layout.astro";
 import Button from "@components/LogoutButton.astro";
 import hasProfile from "@utils/profile";
 
-const cookie: string = `${Astro.cookies.get("login").value}`;
+const cookie: string = `${Astro.cookies.get("login")?.value}`;
 const username = hasProfile(cookie).username as string;
 ---
 
