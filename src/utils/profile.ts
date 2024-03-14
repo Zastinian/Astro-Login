@@ -1,4 +1,4 @@
-import {verify} from "jsonwebtoken";
+import wblt from "jsonwebtoken";
 import type {profileType} from "./types";
 
 export default function hasProfile(myToken: string) {
@@ -19,7 +19,7 @@ export default function hasProfile(myToken: string) {
       success = false;
       return {success: success, email: email, username: username};
     default:
-      const data = verify(myToken, "secret") as profileType;
+      const data = wblt.verify(myToken, "secret") as profileType;
       if (data.email && data.username) {
         email = data.email;
         username = data.username;
