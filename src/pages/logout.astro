@@ -1,6 +1,7 @@
 ---
 let cookie = "none";
 let redir = "/login";
+let cookieName = import.meta.env.COOKIE_NAME || "_Security_Login_";
 if (Astro.request.method === "POST") {
   const cook: string = `${Astro.cookies.get("login")?.value}`;
   if (cook) {
@@ -15,11 +16,12 @@ if (Astro.request.method === "POST") {
   define:vars={{
     cookie,
     redir,
+    cookieName,
   }}
   is:inline
 >
   if (cookie !== "none") {
-    document.cookie = `login=${cookie}; Max-Age=0; path=/`;
+    document.cookie = `${cookieName}=${cookie}; Max-Age=0; path=/`;
     window.location.href = redir;
   }
 </script>
