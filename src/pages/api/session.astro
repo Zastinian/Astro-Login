@@ -24,6 +24,7 @@ if (Astro.request.method === "POST") {
     maxAge,
     cookieName,
   }}
+  is:inline
 >
   if (token !== "none") {
     document.cookie = `${cookieName}=${token}; Max-Age=${maxAge}; path=/`;
