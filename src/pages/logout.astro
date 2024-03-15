@@ -1,14 +1,25 @@
 ---
-import {RequestCookieStore} from "@worker-tools/request-cookie-store";
+let cookie = "none";
+let redir = "/login";
 if (Astro.request.method === "POST") {
-  const cookieStore = new RequestCookieStore(Astro.request);
-  await cookieStore.delete("login");
-  const response = Astro.redirect("/login");
-  new Headers(cookieStore.headers).forEach((value, key) => {
-    response.headers.append(key, value);
-  });
-  return response;
+  const cook: string = `${Astro.cookies.get("login")?.value}`;
+  if (cook) {
+    cookie = cook;
+  }
 } else {
   return Astro.redirect("/");
 }
 ---
+
+<script
+  define:vars={{
+    cookie,
+    redir,
+  }}
+  is:inline
+>
+  if (cookie !== "none") {
+    document.cookie = `login=${cookie}; Max-Age=0; path=/`;
+    window.location.href = redir;
+  }
+</script>

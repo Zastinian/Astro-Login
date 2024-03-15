@@ -1,29 +1,30 @@
 ---
 import loginSave from "@utils/login";
-import {RequestCookieStore} from "@worker-tools/request-cookie-store";
+let token = "none";
+let redir = "/login";
+let maxAge = "none";
 if (Astro.request.method === "POST") {
   const data = Object.fromEntries(new URLSearchParams(await Astro.request.text()));
   const d = await loginSave(data.email, data.password);
-  const cookieStore = new RequestCookieStore(Astro.request);
-  if (d.success == false) {
-    const response = Astro.redirect("/login");
-    new Headers(cookieStore.headers).forEach((value, key) => {
-      response.headers.append(key, value);
-    });
-    return response;
-  } else {
-    await cookieStore.set({
-      name: "login",
-      value: d?.token ?? "",
-      httpOnly: true,
-    });
-    const response = Astro.redirect("/");
-    new Headers(cookieStore.headers).forEach((value, key) => {
-      response.headers.append(key, value);
-    });
-    return response;
+  if (d.success == true) {
+    token = d?.token;
+    redir = "/";
+    maxAge = d?.max;
   }
 } else {
   return Astro.redirect("/login");
 }
 ---
+
+<script
+  define:vars={{
+    token,
+    redir,
+    maxAge,
+  }}
+>
+  if (token !== "none") {
+    document.cookie = `login=${token}; Max-Age=${maxAge}; path=/`;
+    window.location.href = redir;
+  }
+</script>

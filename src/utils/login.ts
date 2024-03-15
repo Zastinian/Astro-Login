@@ -6,16 +6,18 @@ export default async function login(email: string, password: string) {
     return data;
   })) as any;
   if (getLoginData.success == false) {
-    return {success: false, token: null};
+    return {success: false, token: null, max: null};
   } else {
+    const maxAge = 60 * 60 * 24 * 7;
+    const expire = Math.floor(Date.now() / 1000) + maxAge;
     const token = wbtl.sign(
       {
-        exp: Math.floor(Date.now() / 1000) + 60 * 60 * 24 * 30,
+        exp: expire,
         email: email,
         username: getLoginData.username,
       },
-      "secret"
+      "secret",
     );
-    return {success: true, token: `${token}`};
+    return {success: true, token: `${token}`, max: maxAge};
   }
 }
