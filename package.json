@@ -13,7 +13,7 @@
     "@astrojs/node": "^8.2.5",
     "astro": "^4.5.15",
     "astro-compressor": "^0.4.1",
-    "express": "^4.18.3",
+    "express": "^4.19.2",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
