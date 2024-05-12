@@ -4,15 +4,14 @@
   "version": "0.4.0",
   "scripts": {
     "dev": "astro dev",
-    "start": "node ./server.js",
+    "start": "HOST=0.0.0.0 PORT=3000 node ./dist/server/entry.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
     "@astrojs/node": "^8.2.5",
-    "astro": "^4.6.2",
-    "express": "^4.19.2",
+    "astro": "^4.8.2",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
