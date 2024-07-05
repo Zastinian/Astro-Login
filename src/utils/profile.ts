@@ -1,24 +1,24 @@
 import wblt from "jsonwebtoken";
-import type {profileType} from "./types";
+import type { profileType } from "./types";
 
 export default function hasProfile(myToken: string) {
   let email: string | null = null;
   let username: string | null = null;
-  let success: boolean = true;
+  let success = true;
   switch (myToken) {
     case "undefined":
       success = false;
-      return {success: success, email: email, username: username};
+      return { success: success, email: email, username: username };
     case undefined:
       success = false;
-      return {success: success, email: email, username: username};
+      return { success: success, email: email, username: username };
     case "null":
       success = false;
-      return {success: success, email: email, username: username};
+      return { success: success, email: email, username: username };
     case null:
       success = false;
-      return {success: success, email: email, username: username};
-    default:
+      return { success: success, email: email, username: username };
+    default: {
       const data = wblt.verify(myToken, "secret") as profileType;
       if (data.email && data.username) {
         email = data.email;
@@ -26,6 +26,7 @@ export default function hasProfile(myToken: string) {
       } else {
         success = false;
       }
-      return {success: success, email: email, username: username};
+      return { success: success, email: email, username: username };
+    }
   }
 }
