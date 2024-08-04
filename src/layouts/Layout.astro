@@ -1,5 +1,5 @@
 ---
-import hasProfile from "@utils/profile";
+import hasProfile from "@/utils/profile";
 
 const cookie: string = `${Astro.cookies.get(import.meta.env.COOKIE_NAME || "_Security_Login_")?.value}`;
 const d = hasProfile(cookie);
