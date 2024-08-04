@@ -1,9 +1,9 @@
 ---
-import hasProfile from "@/utils/profile";
+interface Props {
+  page: string;
+}
 
-const cookie: string = `${Astro.cookies.get(import.meta.env.COOKIE_NAME || "_Security_Login_")?.value}`;
-const d = hasProfile(cookie);
-const login: string = `${d.success}`;
+const { page } = Astro.props;
 ---
 
 <!doctype html>
@@ -11,7 +11,7 @@ const login: string = `${d.success}`;
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="Content-Encoding" content="gzip" />
-    <title translate="no">Main</title>
+    <title translate="no">{page}</title>
     <link rel="stylesheet" href="/css/style.css" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta property="og:title" content="Main" />
@@ -23,17 +23,8 @@ const login: string = `${d.success}`;
     <link rel="apple-touch-icon" href="/img/favicon.ico" />
     <link rel="apple-touch-icon-precomposed" href="/img/favicon.ico" />
     <link rel="shortcut icon" href="/img/favicon.ico" />
-    <script is:inline>
-      window.onload = function () {
-        const loginData = document.getElementById("loginInput").value;
-        if (loginData == "false") {
-          window.location.href = "/login";
-        }
-      };
-    </script>
   </head>
   <body>
-    <input type="hidden" name="loginInput" id="loginInput" value={login} />
     <slot />
   </body>
 </html>
