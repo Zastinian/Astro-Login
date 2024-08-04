@@ -1,9 +1,17 @@
 ---
-import Layout from "@/layouts/LayoutLogin.astro";
+import Layout from "@/layouts/Layout.astro";
 import LoginForm from "@/components/LoginForm.astro";
+import hasProfile from "@/utils/profile";
+
+const cookie: string = `${Astro.cookies.get(import.meta.env.COOKIE_NAME || "_Security_Login_")?.value}`;
+const d = hasProfile(cookie);
+
+if (d.success === true) {
+  return Astro.redirect("/");
+}
 ---
 
-<Layout>
+<Layout page="Login">
   <div class="login">
     <h1>Login</h1>
     <LoginForm />
