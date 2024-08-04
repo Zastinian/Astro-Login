@@ -1,27 +1,9 @@
 ---
-let cookie = "none";
-const redir = "/login";
 const cookieName = import.meta.env.COOKIE_NAME || "_Security_Login_";
 if (Astro.request.method === "POST") {
-  const cook: string = `${Astro.cookies.get("login")?.value}`;
-  if (cook) {
-    cookie = cook;
-  }
-} else {
+  const cook: string = `${Astro.cookies.get(cookieName)?.value}`;
+  Astro.cookies.set(cookieName, cook, { path: "/", maxAge: 0 });
   return Astro.redirect("/");
 }
+return Astro.redirect("/");
 ---
-
-<script
-  define:vars={{
-    cookie,
-    redir,
-    cookieName,
-  }}
-  is:inline
->
-  if (cookie !== "none") {
-    document.cookie = `${cookieName}=${cookie}; Max-Age=0; path=/`;
-    window.location.href = redir;
-  }
-</script>

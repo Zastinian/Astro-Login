@@ -1,33 +1,23 @@
 ---
 import loginSave from "@/utils/login";
-let token = "none";
-let redir = "/login";
 const cookieName = import.meta.env.COOKIE_NAME || "_Security_Login_";
 let maxAge = 604800;
 if (Astro.request.method === "POST") {
   const data = Object.fromEntries(new URLSearchParams(await Astro.request.text()));
-  const d = await loginSave(data.email, data.password, Number(import.meta.env.MAX_AGE || 604800));
+  const d = await loginSave({
+    email: data.email,
+    password: data.password,
+    maxAge: Number(import.meta.env.MAX_AGE || 604800),
+    secret: import.meta.env.COOKIE_SECRET || "secret",
+  });
+  let token = "none";
   if (d.success === true) {
     token = d?.token || "none";
-    redir = "/";
     maxAge = d?.max || 604800;
+    Astro.cookies.set(cookieName, token, { path: "/", maxAge: maxAge });
+    return Astro.redirect("/");
   }
-} else {
   return Astro.redirect("/login");
 }
+return Astro.redirect("/login");
 ---
-
-<script
-  define:vars={{
-    token,
-    redir,
-    maxAge,
-    cookieName,
-  }}
-  is:inline
->
-  if (token !== "none") {
-    document.cookie = `${cookieName}=${token}; Max-Age=${maxAge}; path=/`;
-    window.location.href = redir;
-  }
-</script>
