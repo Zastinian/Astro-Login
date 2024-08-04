@@ -1,4 +1,4 @@
-import {defineConfig} from "astro/config";
+import { defineConfig } from "astro/config";
 import node from "@astrojs/node";
 
 export default defineConfig({
@@ -6,4 +6,8 @@ export default defineConfig({
   adapter: node({
     mode: "standalone",
   }),
+  server: {
+    host: process.env.HOST || "localhost",
+    port: process.env.PORT || 4321,
+  }
 });
