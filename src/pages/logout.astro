@@ -2,7 +2,7 @@
 const cookieName = import.meta.env.COOKIE_NAME || "_Security_Login_";
 if (Astro.request.method === "POST") {
   const cook: string = `${Astro.cookies.get(cookieName)?.value}`;
-  Astro.cookies.set(cookieName, cook, { path: "/", maxAge: 0 });
+  Astro.cookies.set(cookieName, cook, { path: "/", maxAge: 0, secure: import.meta.env.COOKIE_SECURE || false });
   return Astro.redirect("/");
 }
 return Astro.redirect("/");

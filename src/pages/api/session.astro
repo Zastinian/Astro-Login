@@ -14,7 +14,7 @@ if (Astro.request.method === "POST") {
   if (d.success === true) {
     token = d?.token || "none";
     maxAge = d?.max || 604800;
-    Astro.cookies.set(cookieName, token, { path: "/", maxAge: maxAge });
+    Astro.cookies.set(cookieName, token, { path: "/", maxAge: maxAge, secure: import.meta.env.COOKIE_SECURE || false });
     return Astro.redirect("/");
   }
   return Astro.redirect("/login");
