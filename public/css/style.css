@@ -13,8 +13,9 @@ body {
   padding: 0;
 }
 
-.login {
-  width: 400px;
+.login, .index {
+  width: 90%;
+  max-width: 400px;
   margin: 100px auto;
   background-color: #333333;
   padding: 20px;
@@ -45,17 +46,7 @@ body {
   color: rgb(51, 170, 250);
 }
 
-.index {
-  width: 400px;
-  margin: 100px auto;
-  background-color: #333333;
-  padding: 20px;
-  border-radius: 5px;
-  box-shadow: 0px 0px 10px 0px rgba(99, 98, 98, 0.75);
-  color: white;
-}
-
-.index button {
+.index button, .login button {
   display: flex;
   outline: 0;
   padding: 8px 16px;
@@ -72,43 +63,13 @@ body {
   margin-bottom: 5%;
 }
 
-.index button:hover {
+.index button:hover, .login button:hover {
   border-color: #373737;
   background-color: #494949;
   color: #373737;
 }
 
-.index button:disabled,
-button[disabled] {
-  background-color: #2e2e2e;
-  color: #666;
-}
-
-.login button {
-  display: flex;
-  outline: 0;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 13px;
-  background: #373737;
-  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
-  color: #fff;
-  cursor: pointer;
-  border: 2px solid transparent;
-  transition: all 0.4s ease;
-  margin: auto;
-  margin-top: 2.5%;
-  margin-bottom: 5%;
-}
-
-.login button:hover {
-  border-color: #373737;
-  background-color: #494949;
-  color: #373737;
-}
-
-.login button:disabled,
-button[disabled] {
+.index button:disabled, .login button:disabled, button[disabled] {
   background-color: #2e2e2e;
   color: #666;
 }
@@ -126,7 +87,7 @@ button[disabled] {
   color: #fff;
   padding: 10px 22px;
   border: 2px solid #2f2f30;
-  min-width: 300px;
+  width: 100%;
   box-shadow: 0 1px 6px rgba(0, 0, 0, 0.12), 0 1px 4px rgba(0, 0, 0, 0.24);
   margin-top: 2.5%;
   margin-bottom: 5%;
@@ -138,4 +99,23 @@ button[disabled] {
 
 .login label {
   font-size: 18px;
+}
+
+@media (max-width: 600px) {
+  .login, .index {
+    margin: 50px auto;
+    padding: 15px;
+  }
+
+  .login input {
+    padding: 8px 15px;
+  }
+
+  .quote {
+    font-size: 18px;
+  }
+
+  .quote span {
+    font-size: 12px;
+  }
 }
