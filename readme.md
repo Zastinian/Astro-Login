@@ -18,6 +18,8 @@
     <a href="/"><strong>Explore »</strong></a>
     <br />
     <br />
+    <a href="https://astro-login.hedystia.com">Demo Website</a>
+    .
     <a href="https://github.com/Zastinian/Astro-Login/issues/new">Report Bug</a>
     ·
     <a href="/.github/CONTRIBUTING.md">Contributing</a>
@@ -27,6 +29,7 @@
 ## Links
 
 > - [Website](https://hedystia.com/) (Discord Bot) - Use Astro
+> - [Demo Website](https://astro-login.hedystia.com)
 > - [Discord](https://hedystia.com/support) (Discord Support)
 > - [Portfolio](https://zastinian.com/)
 
