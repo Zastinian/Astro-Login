@@ -4,8 +4,7 @@ import Button from "@/components/LogoutButton.astro";
 import hasProfile from "@/utils/profile";
 
 const cookie: string = `${Astro.cookies.get(import.meta.env.COOKIE_NAME || "_Security_Login_")?.value}`;
-const username = hasProfile(cookie).username as string;
-const d = hasProfile(cookie);
+const d = hasProfile(cookie, import.meta.env.COOKIE_SECRET || "secret");
 
 if (d.success === false) {
   return Astro.redirect("/login");
@@ -15,7 +14,7 @@ if (d.success === false) {
 <Layout page="Home">
   <div class="index">
     <center>
-      <h1>Welcome, {username}</h1>
+      <h1>Welcome, {d.username}</h1>
       <br />
       <Button />
     </center>
