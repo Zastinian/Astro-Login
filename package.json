@@ -1,7 +1,7 @@
 {
   "name": "a",
   "type": "module",
-  "version": "0.4.0",
+  "version": "0.6.0",
   "scripts": {
     "dev": "astro dev",
     "start": "node ./dist/server/entry.mjs",
@@ -10,7 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/node": "^8.3.2",
+    "@astrojs/cloudflare": "^11.0.4",
     "astro": "^4.13.2",
     "jsonwebtoken": "^9.0.2"
   },
