@@ -41,6 +41,17 @@
 | `Change profile data`                  | [profile.ts](/src/utils/profile.ts) |
 | `Example of Environment Variables`     | [.env.example](/.env.example)       |
 
+## Environment Variables
+
+| Variable        | Default Value    |
+| --------------- | ---------------- |
+| `MAX_AGE`       | 604800 (7 days)  |
+| `COOKIE_NAME`   | _Security_Login_ |
+| `COOKIE_SECRET` | secret           |
+| `COOKIE_SECURE` | false            |
+| `PORT`          | 4321             |
+| `HOST`          | localhost        |
+
 ## Preview
 
 <img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-before.webp">
