@@ -9,22 +9,32 @@ const d = hasProfile(cookie, import.meta.env.COOKIE_SECRET || "secret");
 if (d.success === true) {
   return Astro.redirect("/");
 }
+
+const error = new URL(Astro.request.url).searchParams.get("error");
 ---
 
 <Layout page="Login">
-  <div class="login">
-    <h1>Login</h1>
-    <LoginForm />
-    <div class="quote">
-      <center>
-        <span>Email: user@example.com</span>
-        <span>Password: 1234</span>
-        <span
-          >by <a href="https://zastinian.com">Zastinian</a>, <a href="https://github.com/Zastinian/Astro-Login">Github Code</a>, <a
-            href="https://twitter.com/Zastinian">Twitter</a
-          >.</span
-        >
-      </center>
+  <div class={`login-container ${error === "true" ? "error-active" : ""}`}>
+    {
+      error === "true" && (
+        <div class="error-message">
+          <p>Error: Could not login. Please verify your credentials.</p>
+        </div>
+      )
+    }
+    <div class="login">
+      <h1>Login</h1>
+      <LoginForm />
+      <div class="quote">
+        <center>
+          <span>Email: user@example.com</span>
+          <span>Password: 1234</span>
+          <span>
+            by <a href="https://zastinian.com">Zastinian</a>, <a href="https://github.com/Zastinian/Astro-Login">Github Code</a>,{" "}
+            <a href="https://twitter.com/Zastinian">Twitter</a>.
+          </span>
+        </center>
+      </div>
     </div>
   </div>
 </Layout>
