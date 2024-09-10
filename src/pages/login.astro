@@ -14,7 +14,7 @@ const error = new URL(Astro.request.url).searchParams.get("error");
 ---
 
 <Layout page="Login">
-  <div class={`login-container ${error === "true" ? "error-active" : ""}`}>
+  <div class={`container ${error === "true" ? "error-active" : ""}`}>
     {
       error === "true" && (
         <div class="error-message">
