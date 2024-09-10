@@ -54,7 +54,7 @@
 
 ## Preview
 
-<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-before.webp">
+<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login.webp">
 <br />
 <img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-after.webp">
 
