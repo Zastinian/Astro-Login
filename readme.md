@@ -54,11 +54,11 @@
 
 ## Preview
 
-<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login.webp">
+<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login.webp" width="500">
 <br />
-<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-error.webp">
+<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-error.webp" width="500">
 <br />
-<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-after.webp">
+<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-after.webp" width="500">
 
 ## Contributors
 
