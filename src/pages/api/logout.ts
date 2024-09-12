@@ -2,7 +2,7 @@ import type { APIRoute } from "astro";
 
 const cookieName = import.meta.env.COOKIE_NAME || "_Security_Login_";
 
-export const POST: APIRoute = async ({ cookies, redirect }) => {
+export const GET: APIRoute = async ({ cookies, redirect }) => {
 	const cook: string = `${cookies.get(cookieName)?.value}`;
 	cookies.set(cookieName, cook, {
 		path: "/",
