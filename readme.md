@@ -43,18 +43,20 @@
 
 ## Environment Variables
 
-| Variable        | Default Value    |
-| --------------- | ---------------- |
-| `MAX_AGE`       | 604800 (7 days)  |
-| `COOKIE_NAME`   | _Security_Login_ |
-| `COOKIE_SECRET` | secret           |
-| `COOKIE_SECURE` | false            |
-| `PORT`          | 4321             |
-| `HOST`          | localhost        |
+| Variable        | Default Value      |
+| --------------- | ------------------ |
+| `MAX_AGE`       | 604800 (7 days)    |
+| `COOKIE_NAME`   | `_Security_Login_` |
+| `COOKIE_SECRET` | secret             |
+| `COOKIE_SECURE` | false              |
+| `PORT`          | 4321               |
+| `HOST`          | localhost          |
 
 ## Preview
 
 <img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login.webp">
+<br />
+<img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-error.webp">
 <br />
 <img alt="Hedystia" src="https://zastinian.com/img/portfolio/astro-login-after.webp">
 
