@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^7.8.2",
-    "astro": "^4.16.15",
+    "astro": "^4.16.16",
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "@types/cookie": "^0.6.0",
+    "@types/cookie": "^1.0.0",
     "@types/jsonwebtoken": "^9.0.7"
   }
 }
