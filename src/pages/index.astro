@@ -1,12 +1,10 @@
 ---
 import Layout from "@/layouts/Layout.astro";
 import Button from "@/components/LogoutButton.astro";
-import hasProfile from "@/utils/profile";
 
-const cookie: string = `${Astro.cookies.get(import.meta.env.COOKIE_NAME || "_Security_Login_")?.value}`;
-const d = hasProfile(cookie, import.meta.env.COOKIE_SECRET || "secret");
+const profile = Astro.locals.profile;
 
-if (d.success === false) {
+if (profile.success === false) {
   return Astro.redirect("/login");
 }
 ---
@@ -15,7 +13,7 @@ if (d.success === false) {
   <div class="container">
     <div class="index">
       <center>
-        <h1>Welcome, {d.username}</h1>
+        <h1>Welcome, {profile.username}</h1>
         <br />
         <Button />
       </center>
