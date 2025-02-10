@@ -15,7 +15,6 @@
     "jsonwebtoken": "^9.0.2"
   },
   "devDependencies": {
-    "@types/cookie": "^1.0.0",
     "@types/jsonwebtoken": "^9.0.8"
   }
 }
