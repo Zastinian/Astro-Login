@@ -10,9 +10,9 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^8.2.5",
-    "astro": "^5.12.8",
-    "jsonwebtoken": "^9.0.2"
+    "@astrojs/vercel": "^9.0.2",
+    "astro": "^5.16.5",
+    "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
     "@types/jsonwebtoken": "^9.0.10"
