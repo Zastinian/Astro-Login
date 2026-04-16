@@ -11,11 +11,11 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.4",
-    "astro": "^6.1.5",
+    "astro": "^6.1.7",
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.10",
+    "@biomejs/biome": "^2.4.12",
     "@types/jsonwebtoken": "^9.0.10"
   }
 }
