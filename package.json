@@ -10,12 +10,12 @@
     "astro": "astro"
   },
   "dependencies": {
-    "@astrojs/vercel": "^10.0.4",
-    "astro": "^6.1.8",
+    "@astrojs/vercel": "^10.0.6",
+    "astro": "^6.3.1",
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.12",
+    "@biomejs/biome": "^2.4.15",
     "@types/jsonwebtoken": "^9.0.10"
   }
 }
