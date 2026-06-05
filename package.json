@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "@astrojs/vercel": "^10.0.8",
-    "astro": "^6.4.2",
+    "astro": "^6.4.4",
     "jsonwebtoken": "^9.0.3"
   },
   "devDependencies": {
